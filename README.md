@@ -1,4 +1,5 @@
 In this task, we will make a website that looks like [this](https://furends.netlify.app 'this').
+Here is a starting point [Github](https://github.com/JoinCODED/Fur-ends)
 
 ### Pet The Pet!
 

@@ -4,16 +4,16 @@ Here is a starting point [Github](https://github.com/JoinCODED/Fur-ends)
 ### Pet The Pet!
 
 1. Create a state for the pet image with an inital value of `pet.image`.
-2. Pass it to the image src html tag.
+2. Pass it to the image's `src` tag.
 3. Add an `onClick` to the button that changes the state from `"pet.image` to `"pet.image2"`
 4. Test your code, the button should change the image to a gif!
 
 ### Search Bar
 
-1. in `PetsList`, create a state called `query` and a method called `setQuery`.
+1. In `PetsList`, create a state called `query` and a method called `setQuery`.
 2. In the input tag of `SearchBar` add an onChange method that calls `setQuery()` and gives it `event.target.value` as an argument.
 3. At this point, whatever you type in your search bar should appear in the `query` state in `React Dev Tools`.
-4. In your `PetsList`, filter your pets by comparing your pet's name with `query` using `includes`.
+4. In your `PetsList`, filter your pets by comparing your pet's name with `query` using `includes` before you map your list so you can deal with plain javascript object.
 5. At this point, our search bar is case sensitive. Fix it so that it becomes case insensitive.
 
 ### Filter Pets by specie

@@ -7,16 +7,12 @@ export default function PetItem({ pet, adoptPet }) {
   };
 
   return (
-    <div class="col-lg-4 col-md-8 col-sm-10">
-      <div class="single-doctor">
-        <img className="image ratio" alt={pet.name} src={petImage} />
-        <div class="content">
+    <div className="col-lg-4 col-md-8 col-sm-10">
+      <div className="single-doctor">
+        <img className="image" alt={pet.name} src={pet.image} />
+        <div className="content">
           <h3>{pet.name}</h3>
-          <button
-            type="button"
-            class="btn btn-info m-2"
-            onClick={changePetImage}
-          >
+          <button type="button" className="btn btn-info">
             Pet
           </button>
           <button

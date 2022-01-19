@@ -3,7 +3,7 @@ Here is a starting point [fork and clone this repo](https://github.com/JoinCODED
 
 ### Pet The Pet!
 
-1. Create a state for the pet image with an inital value of `pet.image`.
+1. In `PetItem.js`, create a state for the pet image with an inital value of `pet.image`.
 2. Pass it to the image's `src` tag.
 3. Add an `onClick` to the button that changes the state from `"pet.image` to `"pet.image2"`
 4. Test your code, the button should change the image to a gif!

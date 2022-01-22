@@ -1,7 +1,16 @@
-import PetItem from './PetItem';
+import PetItem from "./PetItem";
+import { useState } from "react";
+export default function PetsList({ pets, adoptPet }) {
+  const [query, setQuery] = useState("");
+  const [type, setType] = useState("");
 
-export default function PetsList(props) {
-  const pets = props.pets.map((pet) => <PetItem key={pet.id} pet={pet} />);
+  const changeQuery = (event) => {
+    setQuery(event.target.value);
+  };
+  const changeType = (event) => {
+    setType(event.target.value);
+  };
+
   return (
     <section id="doctors" class="doctor-section pt-140">
       <div class="container">
@@ -18,11 +27,12 @@ export default function PetsList(props) {
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="search-addon"
+                  onChange={changeQuery}
                 />
               </div>
               <br />
               Type:
-              <select class="form-select">
+              <select class="form-select" onChange={changeType}>
                 <option value="" selected>
                   All
                 </option>
@@ -34,7 +44,17 @@ export default function PetsList(props) {
           </div>
         </div>
 
-        <div class="row justify-content-center">{pets}</div>
+        <div class="row justify-content-center">
+          {pets
+            .filter(
+              (pet) =>
+                pet.name.toLowerCase().includes(query.toLowerCase()) &&
+                pet.type.includes(type)
+            )
+            .map((pet) => (
+              <PetItem adoptPet={adoptPet} key={pet.id} pet={pet} blah="blah" />
+            ))}
+        </div>
       </div>
     </section>
   );

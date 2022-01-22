@@ -7,9 +7,6 @@ export default function PetsList({ pets, adoptPet }) {
   const changeQuery = (event) => {
     setQuery(event.target.value);
   };
-  const changeType = (event) => {
-    setType(event.target.value);
-  };
 
   return (
     <section id="doctors" className="doctor-section pt-140">

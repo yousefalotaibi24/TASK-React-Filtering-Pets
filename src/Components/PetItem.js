@@ -1,11 +1,4 @@
-import { useState } from "react";
-export default function PetItem({ pet, adoptPet }) {
-  const [petImage, setPetImage] = useState(pet.image);
-
-  const changePetImage = () => {
-    setPetImage(pet.image2);
-  };
-
+function PetItem({ pet }) {
   return (
     <div className="col-lg-4 col-md-8 col-sm-10">
       <div className="single-doctor">
@@ -15,11 +8,7 @@ export default function PetItem({ pet, adoptPet }) {
           <button type="button" className="btn btn-info">
             Pet
           </button>
-          <button
-            type="button"
-            class="btn btn-info  m-2"
-            onClick={() => adoptPet(pet.id)}
-          >
+          <button type="button" class="btn btn-info  m-2">
             Adopt
           </button>
         </div>
@@ -27,3 +16,5 @@ export default function PetItem({ pet, adoptPet }) {
     </div>
   );
 }
+
+export default PetItem;

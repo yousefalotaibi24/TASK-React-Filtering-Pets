@@ -1,12 +1,8 @@
+import pets from "../petsData";
 import PetItem from "./PetItem";
-import { useState } from "react";
-export default function PetsList({ pets, adoptPet }) {
-  const [query, setQuery] = useState("");
-  const [type, setType] = useState("");
 
-  const changeQuery = (event) => {
-    setQuery(event.target.value);
-  };
+function PetsList() {
+  const petList = pets.map((pet) => <PetItem pet={pet} key={pet.id} />);
 
   return (
     <section id="doctors" className="doctor-section pt-140">
@@ -24,7 +20,6 @@ export default function PetsList({ pets, adoptPet }) {
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="search-addon"
-                  onChange={changeQuery}
                 />
               </div>
               <br />
@@ -41,8 +36,10 @@ export default function PetsList({ pets, adoptPet }) {
           </div>
         </div>
 
-        <div className="row justify-content-center">{pets}</div>
+        <div className="row justify-content-center">{petList}</div>
       </div>
     </section>
   );
 }
+
+export default PetsList;

@@ -1,15 +1,20 @@
 import { useState } from "react";
-import pets from "../petsData";
+
 import PetItem from "./PetItem";
 import petsData from "../petsData";
 
 function PetsList() {
+  const [pets, setPets] = useState(petsData);
+  const handleAdopt = (petIdRemoved) => {
+    let filteredPets = pets.filter((pets) => pets.id !== petIdRemoved);
+    setPets(filteredPets);
+  };
   const [query, setQuery] = useState("");
-  const [type, setType] = useState("All");
-  let filterData = petsData
+  const [type, setType] = useState("");
+  let filterData = pets
     .filter((pets) => pets.name.includes(query))
     .filter((pets) => pets.type.includes(type))
-    .map((pet) => <PetItem pet={pet} key={pet.id} />);
+    .map((pet) => <PetItem pet={pet} key={pet.id} adobt={handleAdopt} />);
 
   return (
     <section id="doctors" className="doctor-section pt-140">
